@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://localhost:8000/main-sitemap.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/page-sitemap.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/categories-sitemap.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/regions-sitemap.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap1.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap2.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap3.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap4.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap5.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap6.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:20+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap7.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap8.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap9.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap10.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap11.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap12.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap13.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap14.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap15.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap16.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap17.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:21+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap18.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap19.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap20.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap21.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap22.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap23.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap24.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap25.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap26.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap27.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:22+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap28.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap29.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap30.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap31.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap32.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap33.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap34.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap35.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap36.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap37.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap38.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:23+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap39.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap40.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap41.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap42.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap43.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap44.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap45.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap46.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap47.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap48.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>http://localhost:8000/sitemap/movies-sitemap49.xml</loc>
+    
+        <lastmod>2024-07-25T15:53:24+00:00</lastmod>
+    </sitemap>
+</sitemapindex>
