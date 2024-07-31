@@ -13,3 +13,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+data_crawler
+/public/film
+/public/m3u8
