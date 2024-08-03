@@ -18,16 +18,6 @@
                 <meta itemProp="position" content="1" />
             </a>
         </li>
-        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-            <a class="" itemprop="item"
-                href="/danh-sach/{{ $currentMovie->type == 'single' ? 'phim-le' : 'phim-bo' }}"
-                title="{{ $currentMovie->type == 'single' ? __('auth.single_movie') : __('auth.series') }}">
-                <span itemprop="name">
-                    {{ $currentMovie->type == 'single' ? __('auth.single_movie') : __('auth.series') }}
-                </span>
-            </a>
-            <meta itemprop="position" content="2">
-        </li>
 
         @foreach ($currentMovie->regions as $region)
             <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
