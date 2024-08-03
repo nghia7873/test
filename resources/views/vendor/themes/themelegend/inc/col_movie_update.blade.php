@@ -1,45 +1,39 @@
-<div class="row movie-update">
-    <div class="col-left">
-        <div class="">
-            @foreach ($movie_update_left as $item)
-                <a href="{{ $item['show_more_url'] }}" target="_blank" title="{{ $item['label'] }}"><img
-                        src="{{ $item['image_url'] }}" width="100%" height="150px" alt="{{ $item['label'] }}"
-                        title="{{ $item['label'] }}">
-                </a>
-            @endforeach
-        </div>
-    </div>
-
-    <div class="col-right">
-        <div id="tabs-movie">
-            <ul class="tabs-movie-block">
-                @foreach ($movie_update_right as $key => $item)
-                    <li class="tab-movie"><a href="#tabs-{{ $key }}" rel="nofollow"
-                            title="{{ $item['label'] }}">{{ $item['label'] }}</a>
-                    </li>
-                @endforeach
-            </ul>
-            @foreach ($movie_update_right as $key => $item)
-                <div class="clear"></div>
-                <h2 class="hidden">{{ $item['label'] }}</h2>
-                <ul class="tab-content" id="tabs-{{ $key }}">
-                    @foreach ($item['data'] as $movie)
-                        <li class="movie">
-                            <a class="movie-link" title="{{ $movie['name'] }}" href="{{ $movie->getUrl() }}">
-                                <div class="thumbn"
-                                    style="background-image: url('{{ $movie->getThumbUrl() }}');">
+@foreach ($movie_update_right as $key => $item)
+<div class="movie-list-index home-v2">
+    <h2 class="header-list-index">
+        <span class="title-list-index">{{ $item['label'] }}</span>
+        @if ($item['link'] && $item['link'] != '#')
+            <a class="more-list-index" href="{{ $item['link'] }}" title="{{ $item['label'] }}">{{ __('auth.view_all') }}</a>
+        @endif
+    </h2>
+    <div class="last-film-box-wrapper">
+        <ul class="last-film-box" id="movie-last-theater">
+            @foreach ($item['data'] as $movie)
+                <li>
+                    <a class="movie-item m-block" href="{{ $movie->getUrl() }}"
+                        title="{{ $movie->name }} - {{ $movie->origin_name }} ({{ $movie->publish_year }})">
+                        <div class="block-wrapper">
+                            <div class="movie-thumbnail ratio-box ratio-3_4">
+                                <div class="public-film-item-thumb ratio-content">
+                                    <img class="blur-up img-responsive lazyautosizes lazyloaded" data-sizes="auto" data-src="{{ $movie->getThumbUrl() }}" alt="{{ $movie->name }}" title="{{ $movie->name }}" src="{{ $movie->getThumbUrl() }}">
                                 </div>
-                                <div class="meta"><span class="name-vn link">{{ $movie['name'] }}</span>
-                                    <span class="name-en">{{ $movie['origin_name'] }}</span></div>
-                            </a>
-                            <div class="eps">
-                                {{ $movie['episode_current']}}
                             </div>
-                            <div class="clear"></div>
-                        </li>
-                    @endforeach
-                </ul>
+                            <div class="movie-meta">
+                                <div class="movie-title-1">{{ $movie->name }}</div><span
+                                    class="movie-title-2">{{ $movie->origin_name }}
+                                    ({{ $movie->publish_year }})
+                                </span>
+                                <span class="ribbon"> {{ $movie->quality }} <span>|</span> {{ $movie->language }} </span>
+                                @if ($movie->type == 'series')
+                                    <span class="ribbon-right">EP 1-{{ $movie->episode_current }}</span>
+                                @endif
+                            </div>
+                        </div>
+                    </a>
+                </li>
             @endforeach
-        </div>
+        </ul>
     </div>
 </div>
+<div class="clearfix"></div>
+@endforeach

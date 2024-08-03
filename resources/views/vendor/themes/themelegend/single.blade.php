@@ -88,9 +88,9 @@
                         </h1>
                         <div class="movie-meta-info">
                             <dl class="movie-dl">
-                                <dt class="movie-dt">สถานะ:</dt>
-                                <dd class="movie-dd status"> {{ $currentMovie->episode_current }}</dd><br />
-                                <dt class="movie-dt">ผู้กำกับ:</dt>
+                                <dt class="movie-dt">IMDb:</dt>
+                                <dd class="movie-dd"> {{ $currentMovie->imdb }}</dd><br />
+                                {{-- <dt class="movie-dt">ผู้กำกับ:</dt>
                                 <dd class="movie-dd dd-cat">
                                     {!! $currentMovie->directors->map(function ($director) {
                                             return '<a href="' .
@@ -101,20 +101,20 @@
                                                 $director->name .
                                                 '</a>';
                                         })->implode(', ') !!}
-                                </dd><br />
-                                <dt class="movie-dt">ประเทศ:</dt>
+                                </dd><br /> --}}
+                                {{-- <dt class="movie-dt">ประเทศ:</dt>
                                 <dd class="movie-dd dd-cat">
                                     {!! $currentMovie->regions->map(function ($region) {
                                             return '<a href="' . $region->getUrl() . '" title="' . $region->name . '">' . $region->name . '</a>';
                                         })->implode(', ') !!}
-                                </dd><br />
+                                </dd><br /> --}}
                                 <dt class="movie-dt">ปี:</dt>
                                 <dd class="movie-dd">{{ $currentMovie->publish_year }}
                                 </dd><br />
-                                <dt class="movie-dt">ระยะเวลา:</dt>
+                                {{-- <dt class="movie-dt">ระยะเวลา:</dt>
                                 <dd class="movie-dd">{{ $currentMovie->episode_time }}</dd><br />
                                 <dt class="movie-dt">จำนวนตอน:</dt>
-                                <dd class="movie-dd">{{ $currentMovie->episode_total }}</dd><br />
+                                <dd class="movie-dd">{{ $currentMovie->episode_total }}</dd><br /> --}}
                                 <dt class="movie-dt">คุณภาพ:</dt>
                                 <dd class="movie-dd">{{ $currentMovie->quality }}</dd><br />
                                 <dt class="movie-dt">ภาษา:</dt>

@@ -16,7 +16,7 @@
         foreach ($lists as $list) {
             if (trim($list)) {
                 $list = explode('|', $list);
-                [$label, $relation, $field, $val, $limit, $link] = array_merge($list, ['Phim mới cập nhật', '', 'type', 'series', 8, '/']);
+                [$label, $relation, $field, $val, $limit, $link] = $list;
                 try {
                     $data[] = [
                         'label' => $label,
@@ -46,10 +46,11 @@
         foreach ($lists as $list) {
             if (trim($list)) {
                 $list = explode('|', $list);
-                [$label, $relation, $field, $val, $sortKey, $alg, $limit] = array_merge($list, ['Phim lẻ mới', '', 'type', 'single', 'created_at', 'desc', 5]);
+                [$label, $relation, $field, $val, $sortKey, $alg, $limit, $link] = $list;
                 try {
                     $data[] = [
                         'label' => $label,
+                        'link' => $link ?: '#',
                         'data' => \Ophim\Core\Models\Movie::when($relation, function ($query) use ($relation, $field, $val) {
                             $query->whereHas($relation, function ($rel) use ($field, $val) {
                                 $rel->where(array_combine(explode(",", $field), explode(",", $val)));
@@ -74,7 +75,7 @@
         foreach ($lists as $list) {
             if (trim($list)) {
                 $list = explode('|', $list);
-                [$label, $image_url, $show_more_url] = array_merge($list, ['Tuyển tập Marvel', 'https://1.bp.blogspot.com/-Me8nPHuQ1Ls/Xe2kMRMudZI/AAAAAAAAAtQ/yitov6AR38k4fk0oTxYxmxx8ukQ09mvKgCLcBGAsYHQ/s1600/Tuyen-Tap-Marvel.jpg', '/tag/marvel']);
+                [$label, $image_url, $show_more_url] = $list;
                 $data[] = [
                     'label' => $label,
                     'image_url' => $image_url,

@@ -146,7 +146,7 @@
                 <div id="btn-expand" class="btn-cs expand-player" title="{{ __('auth.zoom_in_out') }}"><i
                         class="btn-cs-icon icon-expand-sm"></i><span id="expand-status">{{ __('auth.zoom_in') }}</span></div>
                 <a id="btn-toggle-error" class="btn-cs error-player"
-                    title="Báo lỗi phim {{ $currentMovie->name }} - {{ $currentMovie->origin_name }}"
+                    title="รายงานปัญหาภาพยนตร์ {{ $currentMovie->name }} - {{ $currentMovie->origin_name }}"
                     href="javascript:void(0)"><i class="btn-cs-icon icon-error-sm"></i><span>{{ __('auth.report_error') }}</span></a>
 
                 <div class="box-rating">

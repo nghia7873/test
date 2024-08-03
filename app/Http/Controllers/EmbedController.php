@@ -23,17 +23,33 @@ class EmbedController extends Controller
         return view('welcome', ['url' => $embed->embed_url]);
    }
 
+   function getYear($slug)
+   {
+        preg_match_all('/\d+/', $slug, $matches);
+
+        $valid_year = null;
+        foreach ($matches[0] as $number) {
+            if ($number > 2000 && $number < 2025) {
+                $valid_year = $number;
+                break;
+            }
+        }
+
+        return $valid_year;
+   }
+
    public function crawler()
    {
      set_time_limit(0);
      ini_set('memory_limit', '-1');
 
-      $json = file_get_contents(base_path('data_crawler/data.json'));
+      $json = file_get_contents(base_path('data_crawler/movies_updated.json'));
       $payloads = json_decode($json, true);
 
       $payloads =  array_reverse($payloads);
 
-      foreach ($payloads as $payload) {
+      foreach ($payloads as $payload) 
+      {
         if (empty($payload['slug'])) {
             continue;
         }
@@ -43,63 +59,55 @@ class EmbedController extends Controller
             $movie = Movie::where('slug', $payload['slug'])->first();
 
             if ($movie) {
-                // if (!empty($payload['year'])) {
-                //     $a = explode(',',$payload['year']);
-
-                //     $movie->publish_year = !empty(intval($a[0])) ? intval($a[0]) : null;
-                // } else {
-                //     $movie->publish_year = null;
-                // }
-
-                $movie->language = !empty($payload['soundsub']) ? $payload['soundsub'] : 'TH/EN';
+                // $movie->language = !empty($payload['soundsub']) ? $payload['soundsub'] : 'TH/EN';
                
-                $movie->save();
+                // $movie->save();
                 // DB::commit();
                 continue;
-            }
-            // } else {
-            //     if (count($payload['episodes']) > 1) {
-            //         $type = 'series';
-            //         $espisodeCurrent = count($payload['episodes']);
-            //         $espisodeTotal = count($payload['episodes']);
-            //     } else {
-            //         $type = 'single';
-            //         $espisodeCurrent = null;
-            //         $espisodeTotal = null;
-            //     }
+            } else {
+                if (count($payload['episodes']) > 1) {
+                    $type = 'series';
+                    $espisodeCurrent = count($payload['episodes']);
+                    $espisodeTotal = count($payload['episodes']);
+                } else {
+                    $type = 'single';
+                    $espisodeCurrent = null;
+                    $espisodeTotal = null;
+                }
                 
-            //     $img = explode("/", $payload['img']);
-            //     $linkImg = '';
+                $img = explode("/", $payload['img']);
+                $linkImg = '';
 
-            //     if (count($img) > 1) {
-            //         $linkImg = end($img);
-            //         $linkImg = "/storage/images/" . $linkImg;
-            //     }
+                if (count($img) > 1) {
+                    $linkImg = end($img);
+                    $linkImg = "/storage/images/" . $linkImg;
+                }
+                $slugNew = Str::slug($payload['name']);
 
-            //     $movie = Movie::create([
-            //         'name' => $payload['name'],
-            //         'slug' => $payload['slug'],
-            //         'origin_name' => $payload['name'],
-            //         'content' => $payload['description'] ?? '',
-            //         'status' => 'completed',
-            //         'trailer_url' => $payload['trailer_link'] ?? '',
-            //         'thumb_url' => $linkImg,
-            //         'poster_url' => $linkImg,
-            //         'type' => $type,
-            //         'quality' => $payload['status'] ?: 'HD',
-            //         'language' => !empty($payload['soundsub']) ? $payload['soundsub'] : 'TH/EN',
-            //         'publish_year' => !empty($payload['year']) ? $payload['year'] : null,
-            //         'episode_current' => $espisodeCurrent,
-            //         'episode_total' => $espisodeTotal
-            //     ]);
-            // }
+                $movie = Movie::create([
+                    'name' => $payload['name'],
+                    'slug' => $slugNew,
+                    'origin_name' => $payload['name'],
+                    'content' => $payload['description'] ?? '',
+                    'status' => 'completed',
+                    'trailer_url' => $payload['trailer'] ?? '',
+                    'thumb_url' => $linkImg,
+                    'poster_url' => $linkImg,
+                    'type' => $type,
+                    'quality' => $payload['status'] ?: 'HD',
+                    'language' => !empty($payload['soundsub']) ? $payload['soundsub'] : 'TH/EN',
+                    'publish_year' => $this->getYear($slugNew),
+                    'episode_current' => $espisodeCurrent,
+                    'episode_total' => $espisodeTotal,
+                ]);
+            }
 
-            // $this->syncActors($movie, $payload);
-            // $this->syncDirectors($movie, $payload);
-            // $this->syncCategories($movie, $payload);
-            // $this->syncRegions($movie, $payload);
-            // $this->syncTags($movie, $payload);
-            // $this->updateEpisodes($movie, $payload);
+            $this->syncActors($movie, $payload);
+            $this->syncDirectors($movie, $payload);
+            $this->syncCategories($movie, $payload);
+            $this->syncRegions($movie, $payload);
+            $this->syncTags($movie, $payload);
+            $this->updateEpisodes($movie, $payload);
 
             DB::commit();
         } catch (\Exception $e) {
@@ -142,7 +150,7 @@ class EmbedController extends Controller
    {
        if (!isset($payload['genres']) || empty($payload['genres'])) return;
 
-       $genres = explode(",", $payload['genres']);
+       $genres = $payload['genres'];
        $data = [];
 
        foreach ($genres as $category) {
@@ -169,9 +177,19 @@ class EmbedController extends Controller
 
    protected function syncTags($movie, array $payload)
    {
-       if (!isset($payload['tag']) || empty($payload['tag'])) return;
+       if (!isset($payload['tags']) || empty($payload['tags'])) return;
 
-       $tags = explode(",", $payload['tag']);
+       $tags = $payload['tags'];
+       $tags[] = 'ดูหนัง';
+       $tags[] = 'ดูหนังออนไลน์';
+       $tags[] = 'เข้าป่าหาชีวิต';
+       $tags[] = 'ดูหนัง-' . $movie['slug'];
+
+       $string = preg_replace('/[0-9]/', '', $movie['slug']);
+       
+       $string = str_replace('-', '', $string);
+       $tags[] = $string;
+
        $data = [];
        foreach ($tags as $tag) {
         if (!trim($tag)) continue;
@@ -193,10 +211,10 @@ class EmbedController extends Controller
        $number = 1;
 
        foreach ($payload['episodes'] as $episode) {
-           $id = explode('/', $episode['link']);
-           $slug = Str::slug($episode['name']);
+           $id = explode('/', $episode['url']);
+           $slug = Str::slug($episode['slug']);
 
-           $link = explode("/", $episode['link']);
+           $link = explode("/", $episode['url']);
             $linkEncodeId = '';
             $linkEncodeUrl = '';
 
@@ -218,7 +236,7 @@ class EmbedController extends Controller
             try {
                 Embed::create([
                     'embed_id' => $linkEncodeId,
-                    'embed_url' => "film/$linkEncodeUrl" . ".m3u8"
+                    'embed_url' => "playlist/$linkEncodeUrl"
                ]);
             } catch (\Exception $e) {
                return false;
