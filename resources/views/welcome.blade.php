@@ -45,8 +45,17 @@
     </script>
     <script src="//cdn.jsdelivr.net/npm/devtools-detector"></script>
     <script type="text/javascript">
-
-    </script>
+		if(typeof devtoolsDetector === "undefined") {
+			location.reload();
+		} else {
+			devtoolsDetector.launch();
+			devtoolsDetector.addListener(function (isOpen) {
+				if(isOpen) {
+					location.reload();
+				}
+			}); 
+		} 
+		</script>
 </head>
 <body>
 <div id="previewPlayer"></div>
