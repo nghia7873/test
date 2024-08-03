@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 @font-face {
     font-family: zocial;
     font-style: normal;
@@ -1467,7 +1467,7 @@ footer .fb-like {
     float: left;
     list-style: none outside none;
     position: relative;
-    width: 25%;
+    width: 85%;
     margin-right: 60px
 }
 
