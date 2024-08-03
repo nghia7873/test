@@ -46,19 +46,16 @@
         foreach ($lists as $list) {
             if (trim($list)) {
                 $list = explode('|', $list);
-                [$label, $relation, $field, $val, $sortKey, $alg, $limit, $link] = $list;
+                [$label, $relation, $field, $val, $sortKey, $alg, $limit] = $list;
                 try {
                     $data[] = [
                         'label' => $label,
-                        'link' => $link ?: '#',
+                        'link' => '#',
                         'data' => \Ophim\Core\Models\Movie::when($relation, function ($query) use ($relation, $field, $val) {
                             $query->whereHas($relation, function ($rel) use ($field, $val) {
                                 $rel->where(array_combine(explode(",", $field), explode(",", $val)));
                             });
                         })
-                            ->when(!$relation, function ($query) use ($field, $val) {
-                                $query->where(array_combine(explode(",", $field), explode(",", $val)));
-                            })
                             ->orderBy($sortKey, $alg)
                             ->limit($limit)
                             ->get(),
