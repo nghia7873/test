@@ -16,3 +16,6 @@ data_crawler
 /public/playlist
 /public/files
 /public/storage
+/public/sitemap
+/public/sitemap.xml
+/public/main-sitemap.xsl

@@ -155,7 +155,17 @@ class EmbedController extends Controller
 
        foreach ($genres as $category) {
            if (!trim($category)) continue;
-           $data[] = Category::firstOrCreate(['name' => trim($category)])->id;
+
+            $list = ['2020', '2021', '2022', '2023', '2024'];
+
+            
+           if (in_array(trim($category), $list) ) {
+            $name = "หนังใหม่-" . trim($category);
+            $data[] = Category::firstOrCreate(['name' => $name])->id;
+           } else {
+            $data[] = Category::firstOrCreate(['name' => trim($category)])->id;
+           }
+        
        }
 
        $movie->categories()->sync($data);
