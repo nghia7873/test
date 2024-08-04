@@ -60,7 +60,7 @@
 <body>
 <div id="previewPlayer"></div>
 <script>
-    const url = "test.m3u8"
+    const url = "{{ $url }}"
 
     var videoPlayer = jwplayer("previewPlayer");
     class player {
