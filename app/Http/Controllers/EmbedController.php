@@ -55,8 +55,10 @@ class EmbedController extends Controller
         }
         // DB::beginTransaction();
 
+        $slugNew = Str::slug($payload['name']);
+
         try {
-            $movie = Movie::where('slug', $payload['slug'])->first();
+            $movie = Movie::where('slug', $slugNew)->first();
 
             if ($movie) {
                 // $movie->language = !empty($payload['soundsub']) ? $payload['soundsub'] : 'TH/EN';
@@ -158,7 +160,6 @@ class EmbedController extends Controller
 
             $list = ['2020', '2021', '2022', '2023', '2024'];
 
-            
            if (in_array(trim($category), $list) ) {
             $name = "หนังใหม่-" . trim($category);
             $data[] = Category::firstOrCreate(['name' => $name])->id;
